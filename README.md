@@ -21,7 +21,7 @@ It is currently still in its proof-of-concept state, and only supports a single 
 *   logging
 
 
-To use it, download the binary runnable jar and a sample database
+To get started, download the binary runnable jar and a sample database
 java -Xmx2048m -jar WoodwindInfernoGenomicDB-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 This will bring up the GUI which will allow you to:
@@ -38,3 +38,17 @@ Only the first 100 results will show up in the Swing GUI due to memory limitatio
 ================
 
 ##Known Issues
+
+1.  There is a limitation to the file chooser in Swing.  To specify the database, which is a file system directory, navigate to that directory's PARENT, and then select the database root filder, and click 'Continue'
+2.  To specify an output file, specify a directory in the same fashion as in number 1.  A file called 'results.txt' will be created in that directory.
+
+
+##Gui Features
+
+1.  Fast & Easy Search:  This runs just a single time through the redblack tree.  It will not pick up ranges that completely enclose the range specified in your query.  To see those results, uncheck this box
+2.  Sort in memory:  Leave this checked unless you know you'll have more results than you can sort in memory.  If this is unchecked, results are inserted into a redblack tree, which is then traversed to get them in sorted order.  This can be very slow for big result sets, but should theoretically allow you to return very large result sets if desired.
+
+## Current files
+* Runnable Jar: 
+* Source Jar:
+* Sample Database:
