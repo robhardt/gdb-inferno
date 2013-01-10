@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>demo</groupId>
+<artifactId>gdb-inferno</artifactId>
+<version>0.0.2-SNAPSHOT</version>
+<packaging>jar</packaging>
+<name>scala-java-app</name>
+  <properties>
+    <maven.compiler.source>1.5</maven.compiler.source>
+    <maven.compiler.target>1.5</maven.compiler.target>
+    <encoding>UTF-8</encoding>
+    <scala.version>2.9.2</scala.version>
+  </properties>
+  <repositories>
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+	<repository>
+		<id>fakod-snapshots</id>
+		<url>https://raw.github.com/FaKod/fakod-mvn-repo/master/snapshots</url>
+	</repository>
+	<repository>
+		<id>fakod-releases</id>
+		<url>https://raw.github.com/FaKod/fakod-mvn-repo/master/releases</url>
+	</repository>    
+  </repositories>
+<pluginRepositories>
+	<pluginRepository>
+		<id>scala-tools.org</id>
+		<name>Scala-tools Maven2 Repository</name>
+		<url>http://scala-tools.org/repo-releases</url>
+	</pluginRepository>
+</pluginRepositories>
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.scala-tools</groupId>
+			<artifactId>maven-scala-plugin</artifactId>
+			<executions>
+
+				<execution>
+					<id>compile</id>
+					<goals>
+						<goal>compile</goal>
+					</goals>
+					<phase>compile</phase>
+				</execution>
+				<execution>
+					<id>test-compile</id>
+					<goals>
+						<goal>testCompile</goal>
+					</goals>
+					<phase>test-compile</phase>
+				</execution>
+                <execution>
+                   <phase>process-resources</phase>
+                   <goals>
+                     <goal>compile</goal>
+                   </goals>
+                </execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.5</source>
+				<target>1.5</target>
+			</configuration>
+		</plugin>
+		<plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>com.woodwindinferno.genomics.map.GDBRunner</mainClass>
+                    </manifest>
+                </archive>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+            </configuration>
+        </plugin>		
+	</plugins>	
+</build>
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-swing</artifactId>
+      <version>${scala.version}</version>
+    </dependency>    
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
+    </dependency>	  	
+    <dependency>
+		<groupId>org.neo4j</groupId>
+		<artifactId>neo4j-scala</artifactId>
+		<version>0.2.0-M2-SNAPSHOT</version>
+	</dependency>
+    <dependency>
+		<groupId>org.neo4j</groupId>
+		<artifactId>neo4j-kernel</artifactId>
+		<version>1.8</version>
+	</dependency>	
+    <dependency>
+		<groupId>org.neo4j</groupId>
+		<artifactId>neo4j-shell</artifactId>
+		<version>1.8</version>
+	</dependency>		
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-tools.testing</groupId>
+      <artifactId>specs_2.9.1</artifactId>
+      <version>1.6.9</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_2.9.2</artifactId>
+      <version>2.0.M4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
