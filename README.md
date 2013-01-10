@@ -57,3 +57,5 @@ Only the first 100 results will show up in the Swing GUI due to memory limitatio
 ##Acknowledgements and miscellany
 *  The starting point for my red-black tree implementation came from here:  http://matt.might.net/articles/implementation-of-immutable-purely-functional-okasaki-red-black-tree-maps-in-scala/
 *  The underlying database engine is Neo4j, which is available under a dual-license arrangement: Neo Technology Commercial License (NTCL), or the (A)GPLv3
+http://www.neo4j.org/
+
