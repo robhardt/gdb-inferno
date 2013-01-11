@@ -45,7 +45,7 @@ Only the first 100 results will show up in the Swing GUI due to memory limitatio
 3.  When 'sort in memory' is selected, every search is a 'Fast & Easy' search.  The out-lier algorithm is broken when you select 'sort in memory.'  To work around this, just unselect 'sort in memory'
 
 
-##Gui Features
+##GUI Features
 
 1.  Fast & Easy Search:  This runs just a single time through the redblack tree.  It will not pick up ranges that completely enclose the range specified in your query.  To see those results, uncheck this box
 2.  Sort in memory:  Leave this checked unless you know you'll have more results than you can sort in memory.  If this is unchecked, results are inserted into a redblack tree, which is then traversed to get them in sorted order.  This can be very slow for big result sets, but should theoretically allow you to return very large result sets if desired.
