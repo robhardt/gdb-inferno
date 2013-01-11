@@ -16,13 +16,14 @@ It currently allows you to:
 It is currently still in its proof-of-concept state, and only supports a single file format.  The following are some possible future enhancements:
 
 *   an end-user-quality GUI
+*   Move to a distributed client/server architecture
 *   memory optimizations for creating a database
 *   error handling
 *   logging
 
 
-To get started, download the binary runnable jar and a sample database
-java -Xmx2048m -jar WoodwindInfernoGenomicDB-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+To get started, download the binary runnable jar and a sample database, then execute:
+java -Xmx2048m -jar gdb-inferno-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 
 This will bring up the GUI which will allow you to:
 
