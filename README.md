@@ -50,13 +50,12 @@ Only the first 100 results will show up in the Swing GUI due to memory limitatio
 1.  Fast & Easy Search:  This runs just a single time through the redblack tree.  It will not pick up ranges that completely enclose the range specified in your query.  To see those results, uncheck this box
 2.  Sort in memory:  Leave this checked unless you know you'll have more results than you can sort in memory.  If this is unchecked, results are inserted into a redblack tree, which is then traversed to get them in sorted order.  This can be very slow for big result sets, but should theoretically allow you to return very large result sets if desired.
 
-## Current files
-* Runnable Jar: 
-* Source Jar:
-* Sample Database:
+## Current Files
+* Runnable Jar: https://s3.amazonaws.com/robhome/home/ec2-user/genome/gdb-inferno-0.0.2-SNAPSHOT-jar-with-dependencies.jar
+* Sample Database: https://s3.amazonaws.com/robhome/home/ec2-user/genome/db1.zip
 
 
-##Acknowledgements and miscellany
+##Acknowledgements and Miscellany
 *  The starting point for my red-black tree implementation came from here:  http://matt.might.net/articles/implementation-of-immutable-purely-functional-okasaki-red-black-tree-maps-in-scala/
 *  The underlying database engine is Neo4j, which is available under a dual-license arrangement: Neo Technology Commercial License (NTCL), or the (A)GPLv3
 http://www.neo4j.org/
