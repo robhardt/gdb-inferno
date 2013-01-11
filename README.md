@@ -42,6 +42,7 @@ Only the first 100 results will show up in the Swing GUI due to memory limitatio
 
 1.  There is a limitation to the file chooser in Swing.  To specify the database, which is a file system directory, navigate to that directory's PARENT, and then select the database root filder, and click 'Continue'
 2.  To specify an output file, specify a directory in the same fashion as in number 1.  A file called 'results.txt' will be created in that directory.
+3.  When 'sort in memory' is selected, every search is a 'Fast & Easy' search.  The out-lier algorithm is broken when you select 'sort in memory'
 
 
 ##Gui Features
