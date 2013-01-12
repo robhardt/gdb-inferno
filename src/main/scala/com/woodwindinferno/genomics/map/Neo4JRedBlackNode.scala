@@ -29,7 +29,7 @@ import org.neo4j.graphdb.Relationship
  * @param <V>
  */
 abstract class Neo4jRedBlackNode[K,V](val node: Node)(implicit cmp : K => Ordered[K]) {
-	
+  
   implicit val gdb:GraphDatabaseService = node.getGraphDatabase()
   
   def key:K = {
@@ -59,7 +59,7 @@ abstract class Neo4jRedBlackNode[K,V](val node: Node)(implicit cmp : K => Ordere
     }
     //println("in node: "+ident)
     if(amLeaf) Stream[K]()
-    else left.traverseKeys ++ Stream[K](this.key) ++ right.traverseKeys
+    else left.traverseKeys #::: Stream[K](this.key) #::: right.traverseKeys
   }
   
   /**
@@ -73,7 +73,7 @@ abstract class Neo4jRedBlackNode[K,V](val node: Node)(implicit cmp : K => Ordere
     }
     //println("in node: "+ident)
     if(amLeaf) Stream[Node]()
-    else left.traverse ++ Stream[Node](this.node) ++ right.traverse
+    else left.traverse #::: Stream[Node](this.node) #::: right.traverse
   }
   
   /**
@@ -87,7 +87,7 @@ abstract class Neo4jRedBlackNode[K,V](val node: Node)(implicit cmp : K => Ordere
     }
     //println("in node: "+ident)
     if(amLeaf) Stream[Node]()
-    else left.traverse ++ right.traverse ++ Stream[Node](this.node) 
+    else left.traverse #::: right.traverse #::: Stream[Node](this.node) 
   }
   
   
